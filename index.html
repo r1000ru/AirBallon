@@ -5,7 +5,8 @@
         <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
         <title>Air ballon simualator</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
     </head>
     <body style="margin: 0px; padding: 0px;">
         <div id="control">
@@ -13,18 +14,22 @@
             <label for="radius">Radius</label><input id="radius" type="range" min=50 max=2500 step=50 value=50 /><br/>
         </div>
         <div id="map"></div>
+        <script src="js/consts.js" type="text/javascript"></script>
+        <script src="js/atmosphere.js" type="text/javascript"></script>
+        <script src="js/airballoon.js" type="text/javascript"></script>
+        <script src="js/interface.js" type="text/javascript"></script>
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
         
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                console.log('Ready');
-                ymaps.ready(function(){
-                    var map = new ymaps.Map("map", {
-                        center: [55.76, 37.64], 
-                        zoom: 7
-                    });
-                })
-                
-            });
-        </script>
+          
+          
+          <div id='map' style='width: 400px; height: 300px;'></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoicjEwMDBydSIsImEiOiJjaW92dTNpcTYwMDZqdm1tMnFmOXczeTI1In0.fgRr79YEOaScBAFy9HKqfw';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v8'
+                });
+            </script>
+        
     </body>
 </html>
