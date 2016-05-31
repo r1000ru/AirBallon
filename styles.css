@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+#control {
+    width: 25vw;
+    height: 99.6vh;
+    display: inline-block;
+    background-color: gray;
+    top: 0px;
+    vertical-align: top;
+}
+#control label {
+    width: 7vw;
+    color: white;
+    display: inline-block;
+}
+#control input {
+    width: 12vw;
+    margin-left: 1vw;
+    color: white;
+    display: inline-block;
+}
+#map {
+    width: 72vw;
+    height: 99.6vh;
+    display: inline-block;
+}
